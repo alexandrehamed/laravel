@@ -127,7 +127,7 @@ class ArticleController extends Controller
             'user_id' => $user->id
         ]);
 
-        return redirect()->route('articles.index')->with('success', 'L\'article a bien été mis à jour');
+        return redirect()->route('article.index')->with('success', 'L\'article a bien été mis à jour');
 
     }
 
