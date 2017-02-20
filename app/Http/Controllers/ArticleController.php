@@ -8,6 +8,7 @@ use App\Comment;
 use App\Article;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
 use Illuminate\View\View;
 
@@ -138,11 +139,11 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
         $article = Article::find($id);
-        $article->delete();
-        return redirect()->route('articles.index')->with('success', 'Article supprimé');
+        $article->destroy($article->id);
+        return Redirect::back()->with('success', 'Article supprimé');
     }
 
     public function postComment(Request $request, $id)

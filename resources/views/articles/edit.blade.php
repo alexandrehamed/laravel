@@ -20,7 +20,7 @@
                 @endforeach
             </select>
 
-            <button type="submit" class="btn btn-warning">Gonzaguerie</button>
+             <button type="submit" class="btn btn-warning">Gonzaguerie</button>
         </form>
     </div>
 @stop

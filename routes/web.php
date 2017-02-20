@@ -25,6 +25,9 @@ Route::post('article/{id}/comment', [
     'uses' => 'ArticleController@postComment'
 ]);
 
+Route::delete('article/delete/{id}',['as' =>'article.delete','uses' =>'ArticleController@delete']);
+
+
 // Image //
 Route::post('imageUploadForm', 'ImageController@store' );
 Route::get('imageUploadForm', 'ImageController@update' );
