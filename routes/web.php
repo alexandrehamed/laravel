@@ -32,3 +32,5 @@ Route::delete('article/delete/{id}',['as' =>'article.delete','uses' =>'ArticleCo
 Route::post('imageUploadForm', 'ImageController@store' );
 Route::get('imageUploadForm', 'ImageController@update' );
 Route::get('imagelist', 'ImageController@show' );
+
+//send

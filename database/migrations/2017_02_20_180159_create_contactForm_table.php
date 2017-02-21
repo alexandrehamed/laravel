@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFormContactTable extends Migration
+class CreateContactFormTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFormContactTable extends Migration
      */
     public function up()
     {
-        Schema::table('contact', function (Blueprint $table) {
+        Schema::create('contact', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom');
             $table->string('prenom');
@@ -30,6 +30,6 @@ class CreateFormContactTable extends Migration
      */
     public function down()
     {
-        Schema::table('contact');
+        Schema::dropIfExists('contact');
     }
 }
