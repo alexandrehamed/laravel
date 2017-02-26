@@ -1,5 +1,5 @@
 <?php
-
+use App\Mail\KryptoniteFound;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +11,8 @@
 |
 */
 
+
+//
 Route::resource('home','HomeController');
 Route::resource('article', 'ArticleController');
 Route::get('user', 'HomeController@indexUser');
@@ -33,6 +35,10 @@ Route::post('imageUploadForm', 'ImageController@store' );
 Route::get('imageUploadForm', 'ImageController@update' );
 Route::get('imagelist', 'ImageController@show' );
 
-//send
 
+//email
 
+Route::get('contact',
+    ['as' => 'contact', 'uses' => 'AboutController@create']);
+Route::post('contact',
+    ['as' => 'contact_store', 'uses' => 'AboutController@store']);
