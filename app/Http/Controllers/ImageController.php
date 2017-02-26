@@ -23,6 +23,10 @@ use Illuminate\Http\Response;
 
 class ImageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('isConnected');
+    }
     /**
      * Display a listing of the resource.
      *

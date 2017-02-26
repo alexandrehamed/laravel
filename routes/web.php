@@ -15,7 +15,7 @@ Route::resource('home','HomeController');
 Route::resource('article', 'ArticleController');
 Route::get('user', 'HomeController@indexUser');
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -34,3 +34,5 @@ Route::get('imageUploadForm', 'ImageController@update' );
 Route::get('imagelist', 'ImageController@show' );
 
 //send
+
+
